@@ -10,15 +10,16 @@
   <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script> -->
 
   <!-- jquery -->
   <script
 			  src="https://code.jquery.com/jquery-2.2.4.min.js"
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
+
   <style media="screen">
     .hljs-comment,.hljs-quote{color:#8d8687}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-link,.hljs-meta{color:#ef6155}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-deletion{color:#f99b15}.hljs-title,.hljs-section,.hljs-attribute{color:#fec418}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#48b685}.hljs-keyword,.hljs-selector-tag{color:#815ba4}.hljs{display:block;overflow-x:auto;background:#2f1e2e;color:#a39e9b;padding:0.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
   </style>
@@ -64,20 +65,24 @@
 student.typeof('computer science') // true
 
 /*
- * I like to solve problems using Linux,
- * JavaScript, NodeJS, Python, MongoDB,
- * HTML, CSS, Flexbox, Express, and Socket.io
+ * I like to solve problems using
+ * linux, programming language,
+ * framework, web development,
+ * computer networks and
+ * database systems.
  */
 alex.toolbox = {
-  operating_systems : ['linux', 'mac-os' ],
+  operating_system : 'linux',
+  programming_language : [
+  'javascript', 'python', 'C', 'java',
+  'haskell', 'prolog', 'MIPS'
+  ],
+  framework : [ 'twilio', 'react', 'express'],
   web : [
     'ssl', 'https', 'html',
-    'css', 'flexbox', 'jQuery' ],
+    'css', 'flexbox'],
   network : [ 'tcp', 'udp', 'socket.io' ],
-  programming_languages : [
-    'javascript', 'python', 'C', 'java',
-    'haskell', 'prolog', 'MIPS'
-  ]
+  database : [ 'mongoDB', 'SQL']
 }
 </code ></pre>
 
@@ -155,7 +160,7 @@ let languages = '
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="title" data-swiper-parallax="-300">Contact</div>
+        <div class="title" id="contact" data-swiper-parallax="-300">Contact</div>
         <div class="subtitle" data-swiper-parallax="-200">Are you sure you know what you're doing?</div>
         <div class="text" data-swiper-parallax="-100">
           <div class="card">
@@ -163,14 +168,17 @@ let languages = '
               <!-- <div class="container" style="color:black;"> -->
                 <div class="row" style="display:flex;justify-content:center;align-items:center;flex-direction:column;margin-bottom:0px;">
                   <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
+                    <input id="name_field" type="email" class="validate">
                     <label for="email">Name or Email</label>
                   </div>
                   <div class="input-field col s12" style="margin-bottom:0px;">
-                    <textarea id="textarea2" class="materialize-textarea" data-length="256"></textarea>
-                    <label for="textarea2">Message</label>
+                    <textarea id="message_field" class="materialize-textarea" data-length="256"></textarea>
+                    <label for="message_field">Message</label>
                   </div>
-                  <a class="btn-floating btn-large waves-effect waves-light" data-swiper-parallax="-200"><i class="material-icons">send</i></a>
+                  <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light " data-swiper-parallax="-200">
+                    <i  class="material-icons">send</i>
+                  </button>
+
                 </div>
               <!-- </div> -->
               <script type="text/javascript">
@@ -192,14 +200,13 @@ let languages = '
       </div>
     </div>
     <!-- Add Pagination -->
-    <div class="swiper-pagination swiper-pagination-white"></div>
+    <div class="swiper-pagination swiper-pagination"></div>
 
     <!-- Add Navigation -->
     <div class="swiper-button-prev hide-on-small-only " style="background-image:none;fill:#64ffda;left:15%;margin-top:1%;">
       <a class="btn-floating btn-large waves-effect waves-light ">
         <i class="material-icons" style="color:black;">arrow_back</i>
       </a>
-
     </div>
     <div class="swiper-button-next hide-on-small-only right"
     style="background-image:none;fill:#64ffda;right:18.5%;margin-top:1%;"
@@ -214,6 +221,18 @@ let languages = '
 
   </div>
 
+  <script type="text/javascript">
+  (function(){
+    let submit_message = document.getElementById('submit_message');
+    let contact = document.getElementById('contact');
+    contact.addEventListener('click', function() {
+      console.log('eh');
+    })
+    submit_message.addEventListener('click', function() {
+      console.log('what')
+    })
+  })()
+  </script>
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper('.swiper-container', {

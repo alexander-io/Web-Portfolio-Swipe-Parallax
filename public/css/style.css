@@ -73,7 +73,7 @@ h2 {
 
 .card-action {
   font-family: 'Concert One', cursive;
-  
+
 }
 .card-content {
   padding:0px;
@@ -114,4 +114,10 @@ pre {
 }
 .video_backdrop {
   min-height:100%;min-width:100%;
+}
+.swiper-pagination-bullet-active {
+  background-color: #26a69a;
+}
+.swiper-pagination-bullet{
+  background-color: grey;
 }
