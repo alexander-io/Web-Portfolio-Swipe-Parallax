@@ -9,32 +9,28 @@
 
   <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script> -->
+  <link rel="stylesheet" href="/swiper.css">
+
+  <script type="text/javascript" src="swiper.js"></script>
 
   <!-- jquery -->
-  <script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/jquery.js">
+
+  </script>
 
   <style media="screen">
     .hljs-comment,.hljs-quote{color:#8d8687}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-link,.hljs-meta{color:#ef6155}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-deletion{color:#f99b15}.hljs-title,.hljs-section,.hljs-attribute{color:#fec418}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#48b685}.hljs-keyword,.hljs-selector-tag{color:#815ba4}.hljs{display:block;overflow-x:auto;background:#2f1e2e;color:#a39e9b;padding:0.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
   </style>
 
   <!-- highlight js -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
   <!-- materialize.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="/materialize.css">
 
   <!-- materialize.min.js -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
-
-  </script>
+  <script type="text/javascript" src="/materialize.js"></script>
 
 
 </head>
@@ -165,26 +161,32 @@ let languages = '
         <div class="text" data-swiper-parallax="-100">
           <div class="card">
             <div class="card-content" style="color:black;">
-              <!-- <div class="container" style="color:black;"> -->
-                <div class="row" style="display:flex;justify-content:center;align-items:center;flex-direction:column;margin-bottom:0px;">
-                  <div class="input-field col s12">
-                    <input id="name_field" type="email" class="validate">
-                    <label for="email">Name or Email</label>
-                  </div>
-                  <div class="input-field col s12" style="margin-bottom:0px;">
-                    <textarea id="message_field" class="materialize-textarea" data-length="256"></textarea>
-                    <label for="message_field">Message</label>
-                  </div>
-                  <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light " data-swiper-parallax="-200">
-                    <i  class="material-icons">send</i>
-                  </button>
-
+              <div class="row" style="display:flex;justify-content:center;align-items:center;flex-direction:column;margin-bottom:0px;">
+                <div class="input-field col s12">
+                  <input id="name_field" type="email" class="validate">
+                  <label for="email">Name or Email</label>
                 </div>
-              <!-- </div> -->
+                <div class="input-field col s12" style="margin-bottom:0px;">
+                  <textarea id="message_field" class="materialize-textarea" data-length="256"></textarea>
+                  <label for="message_field">Message</label>
+                </div>
+                <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light " data-swiper-parallax="-200">
+                  <i  class="material-icons">send</i>
+                </button>
+
+              </div>
               <script type="text/javascript">
 
               $(document).ready(function() {
                 $('input#input_text, textarea#textarea2').characterCounter();
+                let submit_message = document.getElementById('submit_message');
+                let contact = document.getElementById('contact');
+                contact.addEventListener('click', function() {
+                  console.log('eh');
+                })
+                submit_message.addEventListener('click', function() {
+                  console.log('what')
+                })
               });
               </script>
 
@@ -221,7 +223,7 @@ let languages = '
 
   </div>
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
   (function(){
     let submit_message = document.getElementById('submit_message');
     let contact = document.getElementById('contact');
@@ -232,7 +234,7 @@ let languages = '
       console.log('what')
     })
   })()
-  </script>
+  </script> -->
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper('.swiper-container', {
