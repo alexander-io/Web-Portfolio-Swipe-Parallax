@@ -1,0 +1,117 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#fff;
+  margin: 0;
+  padding: 0;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  background: #1b1b1b;
+}
+.swiper-slide {
+  width: 400px;
+  font-size: 18px;
+  color:#fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.swiper-slide .title {
+  font-size: 41px;
+  font-weight: 300;
+}
+.swiper-slide .subtitle {
+  font-size: 21px;
+}
+.swiper-slide .text {
+  font-size: 14px;
+  max-width: 400px;
+  line-height: 1.3;
+}
+
+.card {
+   /* background-color:#212121; */
+   /* border-top: 30px solid #320b86; */
+}
+
+h2 {
+  color: white;
+}
+.subtitle {
+  color: white;
+  font-family: 'Concert One', cursive;
+  text-align: center;
+  max-width: 300px;
+}
+
+.title {
+  /* background-color:#673ab7; */
+  font-family: 'Concert One', cursive;
+  text-align: center;
+}
+
+.card-action {
+  font-family: 'Concert One', cursive;
+  
+}
+.card-content {
+  padding:0px;
+}
+.card {
+  width: 350px;
+  margin-top:14px;
+}
+.top-card-content {
+  background-color: #e1e2e1;
+}
+.bottom-card-content {
+
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+
+code {
+  opacity : .9;
+  overflow: hidden;
+}
+pre {
+  overflow: hidden;
+}
+.background-vid {
+  position: fixed;
+  margin: 0;
+  right: 0px;
+  bottom:0px;
+  height: 100%;
+  width: 100%;
+  z-index:-1;
+}
+.video_backdrop {
+  min-height:100%;min-width:100%;
+}
