@@ -121,3 +121,7 @@ pre {
 .swiper-pagination-bullet{
   background-color: grey;
 }
+.toast {
+  background-color: white;
+  color: black;
+}

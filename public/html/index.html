@@ -48,7 +48,6 @@
 
 
 
-
     <div class="parallax-bg" data-swiper-parallax="-23%"></div>
     <div class="swiper-wrapper">
 
@@ -156,7 +155,7 @@ let languages = '
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="title" id="contact" data-swiper-parallax="-300">Contact</div>
+        <div class="title"  data-swiper-parallax="-300">Contact</div>
         <div class="subtitle" data-swiper-parallax="-200">Are you sure you know what you're doing?</div>
         <div class="text" data-swiper-parallax="-100">
           <div class="card">
@@ -170,7 +169,7 @@ let languages = '
                   <textarea id="message_field" class="materialize-textarea" data-length="256"></textarea>
                   <label for="message_field">Message</label>
                 </div>
-                <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light " data-swiper-parallax="-200">
+                <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light pulse" data-swiper-parallax="-200">
                   <i  class="material-icons">send</i>
                 </button>
 
@@ -180,12 +179,26 @@ let languages = '
               $(document).ready(function() {
                 $('input#input_text, textarea#textarea2').characterCounter();
                 let submit_message = document.getElementById('submit_message');
-                let contact = document.getElementById('contact');
-                contact.addEventListener('click', function() {
-                  console.log('eh');
-                })
                 submit_message.addEventListener('click', function() {
                   console.log('what')
+
+                  Materialize.toast('submit')
+                  setTimeout(function() {
+                    let toasts = document.getElementsByClassName('toast')
+                    // set timeout to remove  toast
+                    setTimeout(function() {
+                      for (x in Materialize.Toast._toasts) {
+                        Materialize.Toast._toasts[x].remove()
+                      }
+                    }, 4000)
+                  })
+                })
+                submit_message.addEventListener('mouseover', function() {
+                  console.log('mouseover')
+                  this.classList.remove('pulse')
+                })
+                submit_message.addEventListener('mouseout', function() {
+                  this.classList.add('pulse')
                 })
               });
               </script>
