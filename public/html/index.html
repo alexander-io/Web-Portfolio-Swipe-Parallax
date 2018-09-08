@@ -22,6 +22,18 @@
     .hljs-comment,.hljs-quote{color:#8d8687}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-link,.hljs-meta{color:#ef6155}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-deletion{color:#f99b15}.hljs-title,.hljs-section,.hljs-attribute{color:#fec418}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#48b685}.hljs-keyword,.hljs-selector-tag{color:#815ba4}.hljs{display:block;overflow-x:auto;background:#2f1e2e;color:#a39e9b;padding:0.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
   </style>
 
+  <!-- <style media="screen">
+    .hljs{display:block;overflow-x:auto;padding:0.5em;background:#282a36}
+    .hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-section,.hljs-link{color:#8be9fd}
+    .hljs-function .hljs-keyword{color:#ff79c6}
+    .hljs,.hljs-subst{color:#f8f8f2}
+    .hljs-string,.hljs-title,.hljs-name,.hljs-type,.hljs-attribute,.hljs-symbol,.hljs-bullet,.hljs-addition,.hljs-variable,.hljs-template-tag,.hljs-template-variable{color:#f1fa8c}
+    .hljs-comment,.hljs-quote,.hljs-deletion,.hljs-meta{color:#6272a4}
+    .hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-title,.hljs-section,.hljs-doctag,.hljs-type,.hljs-name,.hljs-strong{font-weight:bold}.hljs-emphasis{font-style:italic}
+  </style> -->
+
+
+
   <!-- highlight js -->
   <script type="text/javascript" src="/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -35,6 +47,9 @@
 
 </head>
 <body>
+
+
+
   <!-- swiper -->
   <div class="swiper-container">
 
@@ -143,7 +158,7 @@ let languages = '
 // tools, libraries, visual components, & API
 /*
 +------------+----------------+-------------+
-| Tools      | API | Library  | Visual      |
+| Tools      | API × Library  | Visual      |
 +------------+----------------+-------------+
 | Git &      | Google Maps    | Material    |
 | GitHub     | API            | Design,     |
@@ -174,6 +189,15 @@ let languages = '
         </div>
       </div>
       <div class="swiper-slide">
+        <div class="title" data-swiper-parallax="-300">Experience</div>
+        <div class="subtitle" data-swiper-parallax="-200">Study abroad | Work | Internship</div>
+        <div class="text" data-swiper-parallax="-100">
+          <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
+
+          </code ></pre>
+        </div>
+      </div>
+      <div class="swiper-slide">
         <div class="title"  data-swiper-parallax="-300">Contact</div>
         <div class="subtitle" data-swiper-parallax="-200">Are you sure you know what you're doing?</div>
         <div class="text" data-swiper-parallax="-100">
@@ -193,6 +217,7 @@ let languages = '
                 </button>
 
               </div>
+
               <script type="text/javascript">
 
               $(document).ready(function() {
@@ -277,5 +302,157 @@ let languages = '
   </script>
 
   <link rel="stylesheet" href="/style.css">
+
+  <script type="text/javascript">
+
+  const settings = {
+    core : {
+      dracula : {
+        display:'block',
+        overflowX:'auto',
+        padding:'0.5em',
+        backgroundColor:'#282a36'
+      },
+      purp : {
+        display:"block",
+        overflowX:"auto",
+        backgroundColor:"#2f1e2e",
+        color:"#a39e9b",
+        padding:"0.5em"
+      },
+      lakeside_light : {
+        display:"block",
+        overflowX:"auto",
+        backgroundColor:"#ebf8ff",
+        color:"#516d7b",
+        padding:"0.5em"
+      }
+    },
+    color : {
+      dracula : [
+        '#f1fa8c',
+        '#f8f8f2',
+        '#ff79c6',
+        '#6272a4',
+        '#8be9fd'
+      ],
+      purp : [
+        '#48b685',
+        '#ef6155',
+        '#815ba4',
+        '#8d8687',
+        '#f99b15'
+      ],
+      lakeside_light : [
+        '#568c3b',
+        '#d22d72',
+        '#6b6bb8',
+        '#5a7b8c',
+        '#257fad'
+      ]
+    }
+  }
+
+  const net_of_classes = [ [
+      ".hljs-string",
+      ".hljs-title",
+      ".hljs-name",
+      ".hljs-type",
+      ".hljs-attribute",
+      ".hljs-symbol",
+      ".hljs-bullet",
+      ".hljs-addition",
+      ".hljs-variable",
+      ".hljs-template-tag",
+      ".hljs-template-variable"
+    ], [
+      ".hljs",
+      ".hljs-subst"
+    ], [
+      ".hljs-function",
+      ".hljs-keyword",
+      ".hljs-selector-tag",
+      ".hljs-literal",
+      ".hljs-section",
+      ".hljs-link"
+    ], [
+      ".hljs-comment",
+      ".hljs-quote",
+      ".hljs-deletion",
+      ".hljs-meta"
+    ], [
+      ".hljs-keyword",
+      ".hljs-selector-tag",
+      ".hljs-literal",
+      ".hljs-title",
+      ".hljs-section",
+      ".hljs-doctag",
+      ".hljs-type",
+      ".hljs-name",
+      ".hljs-strong"
+    ]
+  ]
+
+  $(document).ready(function() {
+
+    let white_hex = '#ffffff', black_hex = '#000000'
+
+    var set_to_color = (lst ,color) => {
+      lst.map((x) => {
+        let list_of_elems = document.querySelectorAll(x)
+        if (list_of_elems.length > 0) {
+          for (let i = 0; i < list_of_elems.length;i++) {
+            list_of_elems[i].style.color = color
+          }
+        }
+      })
+    } // end set_to_color()
+
+    var set_hljs_core = (settings) => {
+      let hljs = document.querySelector('.hljs')
+      for (x in settings) {
+        hljs.style[x] = settings[x]
+        console.log(x, hljs.style[x]);
+      }
+    } // end set_hljs_core()
+
+
+    // set highlight js style
+    var set_style = {
+      dracula : () => {
+        set_hljs_core(settings.core.dracula)
+        for (let i = 0;  i < settings.color.dracula.length; i++) set_to_color(net_of_classes[i], settings.color.dracula[i])
+
+        setTimeout(function() {
+          set_style.purp()
+        }, 500)
+
+      },
+      purp : () => {
+        set_hljs_core(settings.core.purp)
+        for (let i = 0;  i < settings.color.purp.length; i++) set_to_color(net_of_classes[i], settings.color.purp[i])
+
+        setTimeout(function() {
+          set_style.lakeside_light()
+        }, 500)
+
+      },
+      lakeside_light : () => {
+        set_hljs_core(settings.core.lakeside_light)
+        for (let i = 0;  i < settings.color.lakeside_light.length; i++) set_to_color(net_of_classes[i], settings.color.lakeside_light[i])
+      }
+    }
+
+
+    // TEST funxion call
+    for (let x = 0; x < 10;  x++) {
+      setTimeout(function() {
+        set_style.dracula()
+      }, x * 1500)
+    }
+  })
+
+  </script>
 </body>
+
 </html>
