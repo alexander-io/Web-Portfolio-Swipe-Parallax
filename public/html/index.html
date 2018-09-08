@@ -69,9 +69,8 @@ student.typeof('computer science') // true
 alex.toolbox = {
   operating_system : 'linux',
   programming_language : [
-  'javascript', 'python', 'C', 'java',
-  'haskell', 'prolog', 'MIPS'
-  ],
+    'javascript', 'python', 'C', 'java',
+    'haskell', 'prolog', 'MIPS'],
   framework : [ 'twilio', 'react', 'express'],
   web : [
     'ssl', 'https', 'html',
@@ -140,14 +139,34 @@ let languages = '
         <div class="title" data-swiper-parallax="-300">Framework</div>
         <div class="subtitle" data-swiper-parallax="-200">Working with software framework is habitual</div>
         <div class="text" data-swiper-parallax="-100">
-          <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
-// Software frameworks include programs, libraries, and APIs
-          </code ></pre>
+          <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">// Software frameworks include programs
+// tools, libraries, visual components, & API
+/*
++------------+----------------+-------------+
+| Tools      | API | Library  | Visual      |
++------------+----------------+-------------+
+| Git &      | Google Maps    | Material    |
+| GitHub     | API            | Design,     |
+|            |                | Materialize |
++------------+----------------+-------------+
+| Node.js    | Twitter        | Bootstrap   |
+|            | API            |             |
++------------+----------------+-------------+
+| NPM        | Coin MarketCap | Three.js    |
+|            | API            |             |
++------------+----------------+-------------+
+| Amazon Web | Socket.io      | Two.js      |
+| Services   |                |             |
++------------+----------------+-------------+
+| Chrome     | D3             | GIMP &      |
+| DevTools   |                | Inkscape    |
++------------+----------------+-------------+
+*/</code ></pre>
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="title" data-swiper-parallax="-300">Design</div>
-        <div class="subtitle" data-swiper-parallax="-200">I choose to create art works with a focus on simplicity</div>
+        <div class="title" data-swiper-parallax="-300">Art Work & Design</div>
+        <div class="subtitle" data-swiper-parallax="-200">I choose to create work with a focus on simplicity</div>
         <div class="text" data-swiper-parallax="-100">
           <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
 
@@ -177,6 +196,8 @@ let languages = '
               <script type="text/javascript">
 
               $(document).ready(function() {
+
+
                 $('input#input_text, textarea#textarea2').characterCounter();
                 let submit_message = document.getElementById('submit_message');
                 submit_message.addEventListener('click', function() {
@@ -224,8 +245,7 @@ let languages = '
       </a>
     </div>
     <div class="swiper-button-next hide-on-small-only right"
-    style="background-image:none;fill:#64ffda;right:18.5%;margin-top:1%;"
-    >
+    style="background-image:none;fill:#64ffda;right:18.5%;margin-top:1%;">
 
 
       <a class="btn-floating btn-large waves-effect waves-light">
@@ -236,18 +256,6 @@ let languages = '
 
   </div>
 
-  <!-- <script type="text/javascript">
-  (function(){
-    let submit_message = document.getElementById('submit_message');
-    let contact = document.getElementById('contact');
-    contact.addEventListener('click', function() {
-      console.log('eh');
-    })
-    submit_message.addEventListener('click', function() {
-      console.log('what')
-    })
-  })()
-  </script> -->
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper('.swiper-container', {
