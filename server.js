@@ -39,6 +39,10 @@ app.get('/jquery.js', function(req, res) {
   res.sendFile(__dirname + '/node_modules/jquery/dist/jquery.js')
 })
 
+app.get('/mod_hljs.js', function(req, res) {
+  res.sendFile(__dirname + '/client/js/mod_hljs.js')
+})
+
 app.listen(port, () => {
   console.log('listening on ' + port)
 })
