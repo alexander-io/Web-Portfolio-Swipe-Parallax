@@ -175,7 +175,7 @@ let languages = '
 /*
 +------------+----------------+-------------+
 | Tools ┐    | API × Library ┐| Visual ┐    |
-+------------+----------------+-------------+
++------- ----+--------------- +-------- ----+
 | Git &      | Google Maps    | Material    |
 | GitHub     | API            | Design,     |
 |            |                | Materialize |
@@ -209,8 +209,28 @@ let languages = '
         <div class="subtitle" data-swiper-parallax="-200">Study abroad | Work | Internship</div>
         <div class="text" data-swiper-parallax="-100">
           <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
-
-          </code ></pre>
+                Experience
+         ┌──────────┼──────────┐
+   Internship  Study Abroad  Employment
+      ┌─┘           │           └───────┐
+┌─────¦─────────────┘         Tutor─────┤
+│ ┌───┘        Teaching Assistant─┤     │
+│ ├─Seattle, WA     CS Department─┤     │
+│ ├─Web           Sept. 2016 - May 2017 │
+│ │  Developer                          │
+│ ├─@ Foundry10                 Grader──┘
+│ ├─May-Sept.   Teaching assistant──┤
+│ │  2017            CS Department──┤
+└─¦──────────────┐  Sept. 2016 - May 2017
+  ├─Bend, OR     │
+  ├─Logistics    └─Northeast India,
+  │  Coordinator    State of Uttarakhand
+  ├─@ Northwest     └─┬─Ethnography Based
+  │   Outward         └─May - July 2015
+  │    Bound
+  └─May-Sept.
+     2016
+         </code ></pre>
         </div>
       </div>
       <div class="swiper-slide">
@@ -234,36 +254,7 @@ let languages = '
 
               </div>
 
-              <script type="text/javascript">
 
-              $(document).ready(function() {
-
-
-                $('input#input_text, textarea#textarea2').characterCounter();
-                let submit_message = document.getElementById('submit_message');
-                submit_message.addEventListener('click', function() {
-                  console.log('what')
-
-                  Materialize.toast('submit')
-                  setTimeout(function() {
-                    let toasts = document.getElementsByClassName('toast')
-                    // set timeout to remove  toast
-                    setTimeout(function() {
-                      for (x in Materialize.Toast._toasts) {
-                        Materialize.Toast._toasts[x].remove()
-                      }
-                    }, 4000)
-                  })
-                })
-                submit_message.addEventListener('mouseover', function() {
-                  console.log('mouseover')
-                  this.classList.remove('pulse')
-                })
-                submit_message.addEventListener('mouseout', function() {
-                  this.classList.add('pulse')
-                })
-              });
-              </script>
 
 
             </div>
@@ -320,7 +311,7 @@ let languages = '
 
   <!-- change hljs style -->
   <script type="text/javascript" src="mod_hljs.js"></script>
-
+  <script type="text/javascript" src="/submit_handler.js"></script>
 
   <link rel="stylesheet" href="/style.css">
 

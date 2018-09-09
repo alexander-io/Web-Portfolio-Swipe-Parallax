@@ -43,6 +43,10 @@ app.get('/mod_hljs.js', function(req, res) {
   res.sendFile(__dirname + '/client/js/mod_hljs.js')
 })
 
+app.get('/submit_handler.js', function(req, res) {
+  res.sendFile(__dirname + '/client/js/submit_handler.js')
+})
+
 app.listen(port, () => {
   console.log('listening on ' + port)
 })
