@@ -136,10 +136,10 @@
         set_hljs_core(settings.core.purp)
         for (let i = 0;  i < settings.color.purp.length; i++) set_to_color(net_of_classes[i], settings.color.purp[i])
       },
-      lakeside_light : () => {
-        set_hljs_core(settings.core.lakeside_light)
-        for (let i = 0;  i < settings.color.lakeside_light.length; i++) set_to_color(net_of_classes[i], settings.color.lakeside_light[i])
-      },
+      // lakeside_light : () => {
+      //   set_hljs_core(settings.core.lakeside_light)
+      //   for (let i = 0;  i < settings.color.lakeside_light.length; i++) set_to_color(net_of_classes[i], settings.color.lakeside_light[i])
+      // },
       atelier_sulphurpool_dark : () => {
         set_hljs_core(settings.core.atelier_sulphurpool_dark)
         for (let i = 0;  i < settings.color.lakeside_light.length; i++) set_to_color(net_of_classes[i], settings.color.atelier_sulphurpool_dark[i])
