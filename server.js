@@ -1,5 +1,10 @@
 let express =  require('express')
+let twilio = require('twilio')
+
 let app =  express()
+
+var accountSid = 'AC067a5e1514f4e1592f6a8912a4f84590'; // Your Account SID from www.twilio.com/console
+var authToken = '971b883992a4bbd9d1d17f9a7e0d1960';   // Your Auth Token from www.twilio.com/console
 
 const port = 8080
 
@@ -45,6 +50,19 @@ app.get('/mod_hljs.js', function(req, res) {
 
 app.get('/submit_handler.js', function(req, res) {
   res.sendFile(__dirname + '/client/js/submit_handler.js')
+})
+
+app.post('/message', function(req, res) {
+  console.log('got post to /message')
+  var client = new twilio(accountSid, authToken);
+
+  client.messages.create({
+      body: 'Hello from Node',
+      to: '+12623542930',  // Text this number
+      from: '+12623542930' // From a valid Twilio number
+  })
+  .then((message) => console.log(message.sid));
+  res.send({'status' : 'good'})
 })
 
 app.listen(port, () => {

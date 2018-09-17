@@ -157,6 +157,14 @@ div.container {
   margin-top:5%;
 
 }
+.halfblox {
+  height:100px;
+  width:49%;
+  margin:.45%;
+  background-color:#f57f17;
+  margin-top:5%;
+  transition: width .5s;
+}
 .tallblox {
   height:200px;
   width:33%;

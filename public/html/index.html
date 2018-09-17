@@ -240,8 +240,27 @@ let languages = '
         <div class="card" data-swiper-parallax="-100" style="max-height:420px;overflow-y:scroll;">
           <div class="container">
             <div class="text" data-swiper-parallax="-100" style="display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex-wrap:wrap;">
+              <div class="halfblox"></div>
+              <div class="halfblox"></div>
+              <div class="halfblox"></div>
+              <div class="halfblox"></div>
+              <script type="text/javascript">
+                console.log(document.querySelectorAll("div.halfblox"))
+                let halfblox = document.querySelectorAll("div.halfblox")
+                console.log(halfblox.length)
+                for (let i =  0; i < halfblox.length;i++) {
+                  halfblox[i].addEventListener("mouseover", function() {
+                    this.style.width = "99%"
+                  })
+                  halfblox[i].addEventListener("mouseout", function() {
+                    this.style.width = "49%"
 
-              <div class="wideblox">
+
+                  })
+
+                }
+              </script>
+              <!-- <div class="wideblox">
                 <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore </h6>
               </div>
               <div class="blox">
@@ -307,7 +326,7 @@ let languages = '
               <div class="blox">
                 <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
                 style="max-width:100%;position:relative;bottom:5px;">
-              </div>
+              </div> -->
 
 
 
@@ -454,7 +473,7 @@ let languages = '
                   <textarea id="message_field" class="materialize-textarea" data-length="256"></textarea>
                   <label for="message_field">Message</label>
                 </div>
-                <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light pulse" data-swiper-parallax="-200">
+                <button  id="submit_message" class="btn-floating btn-large waves-effect waves-light pulse" data-swiper-parallax="-200" style="background-color:#f57f17;">
                   <i  class="material-icons">send</i>
                 </button>
 
@@ -465,9 +484,9 @@ let languages = '
 
             </div>
             <div class="card-action" style="text-align:center;color:black;display:flex;justify-content:space-evenly;align-items:center;">
-              <h6>GitHub</h6>
-              <h6>CV</h6>
-              <h6>LinkedIn</h6>
+              <a class="waves-effect waves-light btn">GitHub</a>
+              <a class="waves-effect waves-light btn">CV</a>
+              <a class="waves-effect waves-light btn">LinkedIn</a>
             </div>
           </div>
         </div>
