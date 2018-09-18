@@ -41,6 +41,7 @@
           throw "message empty"
         }
         Materialize.toast('<span style="color:rgb(61, 143, 209);">message</span>.<span style="color:green;">submit()</span>')
+
         postData('/message', {
            'name' : name_input.value,
            'message' : message_input.value
@@ -51,9 +52,6 @@
       } catch (e) {
         console.log(e)
       }
-
-
-
 
       // remove toast TODO
       setTimeout(function() {

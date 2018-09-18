@@ -158,7 +158,7 @@ div.container {
 
 }
 .halfblox {
-  height:100px;
+  /* height:100px; */
   width:49%;
   margin:.45%;
   background-color:#f57f17;

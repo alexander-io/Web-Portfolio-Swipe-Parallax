@@ -240,113 +240,47 @@ let languages = '
         <div class="card" data-swiper-parallax="-100" style="max-height:420px;overflow-y:scroll;">
           <div class="container">
             <div class="text" data-swiper-parallax="-100" style="display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex-wrap:wrap;">
-              <div class="halfblox"></div>
-              <div class="halfblox"></div>
-              <div class="halfblox"></div>
-              <div class="halfblox"></div>
+              <div class="halfblox">
+                <img style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
+              </div>
+              <div class="halfblox">
+                <img style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
+              </div>
+
+              <div class="halfblox">
+                <img style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
+              </div>
+              <div class="halfblox">
+                <img style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
+              </div>
               <script type="text/javascript">
-                console.log(document.querySelectorAll("div.halfblox"))
                 let halfblox = document.querySelectorAll("div.halfblox")
-                console.log(halfblox.length)
                 for (let i =  0; i < halfblox.length;i++) {
-                  halfblox[i].addEventListener("mouseover", function() {
-                    this.style.width = "99%"
+                  halfblox[i].addEventListener("mouseenter", function() {
+                    let child = document.createElement("div")
+                    child.style.position = 'absolute'
+                    child.style.height = this.offsetHeight + "px"
+                    child.style.width = (this.offsetWidth+3) + "px"
+                    child.style.zIndex = "1"
+                    child.style.transition = "all 0.5s ease"
+                    child.style.opacity =  '0.0'
+                    child.style.backgroundColor = 'white'
+                    child.style.transform = "translateY(-"+this.offsetHeight+"px)"
+                    this.appendChild(child)
+                    setTimeout(function() {
+                      child.style.opacity =  '0.7'
+                    }, 50)
                   })
-                  halfblox[i].addEventListener("mouseout", function() {
-                    this.style.width = "49%"
-
-
+                  halfblox[i].addEventListener("mouseleave", function() {
+                    for (let i = 0; i < this.childNodes.length;i++) {
+                      if (this.childNodes[i].nodeName ==  "DIV") {
+                        console.log(this.childNodes[i].nodeName);
+                        this.removeChild(this.childNodes[i])
+                      }
+                    }
                   })
-
                 }
               </script>
-              <!-- <div class="wideblox">
-                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore </h6>
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/Plvto-2D-Vector-Graphic-Animation">Plvto-2D-Vector-Graphic-Animation</a>
-              </div>
-
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/Expandable-Grid-List">Expandable-Grid-List</a>
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/Navigation-Bar-Collection">Navigation Bar Collection</a>
-              </div>
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/F10-Site">F10 Site</a>
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/Artist-Web-Portfolio">Artist Web Portfolion</a>
-              </div>
-
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/Instagram-Ascertain-and-Repost">Instagram Ascertain & Repost</a>
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div>
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/mononoke.io">Mononoke.io</a>
-              </div>
-
-              <div class="wideblox">
-                <a href="https://github.com/alexander-io/Dvoark-Simulator-Three.js">Three.js Dvorak Simulator</a>
-              </div>
-              <div class="blox">
-                <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt=""
-                style="max-width:100%;position:relative;bottom:5px;">
-              </div> -->
-
-
-
-
-
-
-              <!-- <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div>
-              <div class="blox"></div> -->
-
-              <!-- <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
-
-              </code ></pre> -->
             </div>
           </div>
         </div>
@@ -484,9 +418,9 @@ let languages = '
 
             </div>
             <div class="card-action" style="text-align:center;color:black;display:flex;justify-content:space-evenly;align-items:center;">
-              <a class="waves-effect waves-light btn">GitHub</a>
-              <a class="waves-effect waves-light btn">CV</a>
-              <a class="waves-effect waves-light btn">LinkedIn</a>
+              <a class="waves-effect waves-light btn" style="background-color:#f57f17;">GitHub</a>
+              <a class="waves-effect waves-light btn" style="background-color:#f57f17;">CV</a>
+              <a class="waves-effect waves-light btn" style="background-color:#f57f17;">LinkedIn</a>
             </div>
           </div>
         </div>
