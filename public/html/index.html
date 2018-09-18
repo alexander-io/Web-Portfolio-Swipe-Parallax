@@ -237,32 +237,52 @@ let languages = '
         <div class="subtitle" data-swiper-parallax="-200">I choose to create work with a focus on simplicity</div>
 
 
-        <div class="card" data-swiper-parallax="-100" style="max-height:420px;overflow-y:scroll;">
+        <div id="art_scroll"class="card" data-swiper-parallax="-100" style="max-height:420px;overflow-y:scroll;">
           <div class="container">
             <div class="text" data-swiper-parallax="-100" style="display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex-wrap:wrap;">
-              <div class="halfblox">
-                <img style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
+              <div class="halfblox" style="width:100%;">
+                <img class="" style="max-width:100%;max-height:100%;"src="/clay03.jpg" alt="">
               </div>
               <div class="halfblox">
-                <img style="max-width:100%;max-height:100%;"src="/clay01.jpg" alt="">
+                <img class="" style="max-width:100%;max-height:100%;transform:rotate(90deg);"src="/clay04.jpg" alt="">
               </div>
 
               <div class="halfblox">
-                <img style="max-width:100%;max-height:100%;"src="/clay01.jpg" alt="">
+                <img class="" style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
               </div>
               <div class="halfblox">
-                <img style="max-width:100%;max-height:100%;"src="/clay00.jpg" alt="">
+                <img class="" style="max-width:100%;max-height:100%;"src="/clay02.jpg" alt="">
               </div>
+              <div class="halfblox">
+                <img class="" style="max-width:100%;max-height:100%;"src="/clay05.jpg" alt="">
+              </div>
+              <div class="halfblox" style="width:100%;">
+                <img class="" style="max-width:100%;max-height:100%;"src="/clay01.jpg" alt="">
+              </div>
+
               <script type="text/javascript">
+
+                var remove_overlay = function(elem) {
+                  try {
+                    document.querySelectorAll(".overlay").item(0).remove()
+                  } catch (e) {
+                  }
+                }
+
                 let halfblox = document.querySelectorAll("div.halfblox")
+
+                // for each halfblox  element, add event listeners
                 for (let i =  0; i < halfblox.length;i++) {
+
                   halfblox[i].addEventListener("mouseenter", function() {
+                    console.log('mouse enter');
                     let child = document.createElement("div")
+                    child.classList.add("overlay")
                     child.style.position = 'absolute'
                     child.style.height = this.offsetHeight + "px"
                     child.style.width = (this.offsetWidth+3) + "px"
                     child.style.zIndex = "1"
-                    child.style.transition = "all 0.5s ease"
+                    child.style.transition = "opacity 0.5s ease"
                     child.style.opacity =  '0.0'
                     child.style.backgroundColor = 'white'
                     child.style.transform = "translateY(-"+this.offsetHeight+"px)"
@@ -271,13 +291,32 @@ let languages = '
                       child.style.opacity =  '0.7'
                     }, 50)
                   })
+
                   halfblox[i].addEventListener("mouseleave", function() {
-                    for (let i = 0; i < this.childNodes.length;i++) {
-                      if (this.childNodes[i].nodeName ==  "DIV") {
-                        console.log(this.childNodes[i].nodeName);
-                        this.removeChild(this.childNodes[i])
-                      }
+                    remove_overlay(this)
+                  })
+
+                  halfblox[i].addEventListener("click", function() {
+                    let parent = this.parentElement
+                    let halfblox =  document.querySelectorAll(".halfblox")
+                    for (let i = 0; i < halfblox.length;i++) {
+                      halfblox[i].style.width = "49%"
                     }
+                    this.style.width = "100%"
+                    setTimeout(function(){
+
+                      for (let i  = parent.children.length-1; i>= 0; i--) {
+                        if (parent.children.item(i).className == 'halfblox') {
+                          parent.children.item(i).style.width = "100%"
+                          break
+                        }
+                      }
+                    },300)
+
+                    remove_overlay(this)
+                    this.remove()
+                    parent.prepend(this)
+                    $("#art_scroll").animate({ scrollTop: 0 }, "slow");
                   })
                 }
               </script>
@@ -290,8 +329,8 @@ let languages = '
         <div class="subtitle" data-swiper-parallax="-200">Study abroad, Work, Internship</div>
         <div class="text" data-swiper-parallax="-100">
           <ul class="collapsible" style="color:black;width:400px;text-align:center;">
-   <li >
-     <div class="collapsible-header" >
+   <li class="active">
+     <div class="collapsible-header active" >
        <i class="material-icons">filter_drama</i> Internship
 
      </div>
@@ -303,7 +342,6 @@ let languages = '
                  <!-- <img src="images/sample-1.jpg"> -->
                  <a class="btn-floating halfway-fab waves-effect waves-light yellow darken-4"><i class="material-icons">filter_drama</i></a>
                </div>
-               <!-- <span class="card-title">Web Development <br>& Logistics</span> -->
           <div class="card-content" style="padding-bottom:1%;padding-top:1%;">
             <div class="text" data-swiper-parallax="-100">
               <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
@@ -426,6 +464,8 @@ let languages = '
         </div>
       </div>
     </div>
+
+
     <!-- Add Pagination -->
     <div class="swiper-pagination swiper-pagination"></div>
 

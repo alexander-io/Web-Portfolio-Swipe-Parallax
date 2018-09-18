@@ -51,8 +51,6 @@ body {
 }
 
 .card {
-   /* background-color:#212121; */
-   /* border-top: 30px solid #320b86; */
 }
 
 h2 {
@@ -62,7 +60,7 @@ h2 {
   color: white;
   font-family: 'Concert One', cursive;
   text-align: center;
-  max-width: 300px;
+  max-width: 200px;
 }
 
 .title {
@@ -163,7 +161,7 @@ div.container {
   margin:.45%;
   background-color:#f57f17;
   margin-top:5%;
-  transition: width .5s;
+  /* transition: width .5s; */
 }
 .tallblox {
   height:200px;

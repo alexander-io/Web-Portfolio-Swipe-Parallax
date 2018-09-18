@@ -75,6 +75,18 @@ app.get('/clay00.jpg', function(req, res) {
 app.get('/clay01.jpg', function(req, res) {
   res.sendFile(__dirname + '/media/clay01.jpg')
 })
+app.get('/clay02.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/clay02.jpg')
+})
+app.get('/clay03.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/clay03.jpg')
+})
+app.get('/clay04.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/clay04.jpg')
+})
+app.get('/clay05.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/clay05.jpg')
+})
 app.listen(port, () => {
   console.log('listening on ' + port)
 })
