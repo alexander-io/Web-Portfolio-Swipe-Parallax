@@ -4,10 +4,7 @@ let bodyParser = require('body-parser')
 
 let app =  express()
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
 app.use(bodyParser.json())
 
 var accountSid = 'AC067a5e1514f4e1592f6a8912a4f84590'; // Your Account SID from www.twilio.com/console
@@ -65,8 +62,8 @@ app.post('/message', function(req, res) {
 
   client.messages.create({
       body: req.body.name + " " + req.body.message,
-      to: '+12623542930', // From a valid Twilio number
-      from: '+12622394781'  // Text this number
+      to: '+12623542930',
+      from: '+12622394781'
   })
   .then((message) => console.log(message.sid));
   res.send({'status' : 'good'})
@@ -74,6 +71,9 @@ app.post('/message', function(req, res) {
 
 app.get('/clay00.jpg', function(req, res) {
   res.sendFile(__dirname + '/media/clay00.jpg')
+})
+app.get('/clay01.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/clay01.jpg')
 })
 app.listen(port, () => {
   console.log('listening on ' + port)

@@ -1,25 +1,24 @@
 (function() {
   $(document).ready(function() {
 
+    // define function to post  data
     function postData(url = ``, data = {}) {
-      // Default options are marked with *
+      // call fetch
       return fetch(url, {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, cors, *same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, same-origin, *omit
+          method: "POST",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
           headers: {
-              "Content-Type": "application/json; charset=utf-8",
-              // "Content-Type": "application/x-www-form-urlencoded",
+              "Content-Type": "application/json; charset=utf-8"
           },
-          redirect: "follow", // manual, *follow, error
-          referrer: "no-referrer", // no-referrer, *client
-          body: JSON.stringify(data), // body data type must match "Content-Type" header
+          redirect: "follow",
+          referrer: "no-referrer",
+          body: JSON.stringify(data)
       })
       .then(response => {
         console.log('got response')
-        // console.log(response.json())
-      }); // parses response to JSON
+      });
     }
 
 
@@ -29,23 +28,24 @@
     let message_input = document.getElementById('message_field')
 
     submit_message.addEventListener('click', function() {
-      // console.log(name_input.value)
-
-      try {
+      try { // try to submit the message to the server for twilio sms shipping
+        // if the name  field is  empty
         if (name_field.value == '') {
           Materialize.toast('error : required name field')
           throw "name empty"
         }
+        // if the  message field is empty
         if (message_input.value == '') {
           Materialize.toast('error : required message field')
           throw "message empty"
         }
-        Materialize.toast('<span style="color:rgb(61, 143, 209);">message</span>.<span style="color:green;">submit()</span>')
-
+        // send post request
         postData('/message', {
            'name' : name_input.value,
            'message' : message_input.value
         })
+        // toast message sent
+        Materialize.toast('<span style="color:rgb(61, 143, 209);">message</span>.<span style="color:green;">submit()</span>')
         message_input.value = ''
         name_input.value = ''
 
@@ -73,7 +73,4 @@
       this.classList.add('pulse')
     })
   })
-
-
-
 })()
