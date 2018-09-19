@@ -87,6 +87,14 @@ app.get('/clay04.jpg', function(req, res) {
 app.get('/clay05.jpg', function(req, res) {
   res.sendFile(__dirname + '/media/clay05.jpg')
 })
+
+app.get('/study_abroad00.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/study_abroad00.jpg')
+})
+
+app.get('/resume.pdf', function(req, res) {
+  res.sendFile(__dirname + '/media/resume.pdf')
+})
 app.listen(port, () => {
   console.log('listening on ' + port)
 })
