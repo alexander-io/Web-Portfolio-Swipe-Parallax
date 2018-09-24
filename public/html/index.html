@@ -49,7 +49,7 @@
       <video
         class="video_backdrop"
         src="out_full.mp4"
-        autoplay loop muted
+        autoplay loop autobuffer muted playsinline 
         ></video>
     </div>
 
@@ -259,7 +259,7 @@ let languages = '
               </div>
 
               <script type="text/javascript">
-              
+
               document.getElementById('scroll_down').addEventListener("click", function() {
                 $("#art_scroll").animate({ scrollTop: 350 }, "slow");
               })
