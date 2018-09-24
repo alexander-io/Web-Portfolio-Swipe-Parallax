@@ -99,8 +99,8 @@ app.get('/programming.png', function(req, res) {
   res.sendFile(__dirname + '/media/programming.png')
 })
 
-app.get('/programming.png_16x16', function(req, res) {
-  res.sendFile(__dirname + '/media/programming.png_16x16')
+app.get('/programming_16x16.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming_16x16.png')
 })
 
 app.get('/programming_24x24.png', function(req, res) {
@@ -122,6 +122,14 @@ app.get('/programming_128x128.png', function(req, res) {
 
 app.get('/programming_256x256.png', function(req, res) {
   res.sendFile(__dirname + '/media/programming_256x256.png')
+})
+
+app.get('/Roboto-Regular.woff2', function(req, res) {
+  res.sendFile(__dirname + '/node_modules/materialize-css/dist/fonts/roboto/Roboto-Regular.woff2')
+})
+
+app.get('/Roboto-Regular.woff', function(req, res) {
+  res.sendFile(__dirname + '/node_modules/materialize-css/dist/fonts/roboto/Roboto-Regular.woff')
 })
 
 app.get('/resume.pdf', function(req, res) {
