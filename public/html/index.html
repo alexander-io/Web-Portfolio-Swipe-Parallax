@@ -5,7 +5,14 @@
   <title>Alexander Harris</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <meta name="theme-color" content="#14cba8">
+  <link rel="shortcut icon" type="image/png" href="/programming.png"/>
+  <link rel="icon" type="image/png" sizes="16x16"  href="/programming_16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/programming_32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/programming_64x64.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/programming_128x128.png">
+
+
+  <meta name="theme-color" content="#f57f17">
 
   <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,6 +53,8 @@
         ></video>
     </div>
 
+
+
     <div class="fixed-action-btn">
       <a class="btn-floating btn-large yellow darken-4">
         <i class="large material-icons">mode_edit</i>
@@ -59,11 +68,6 @@
         <li>
           <a id="style01" class="btn-floating yellow darken-1">
             <i class="material-icons">bubble_chart</i>
-          </a>
-        </li>
-        <li>
-          <a id="style02" class="btn-floating yellow darken-2">
-            <i class="material-icons">color_lens</i>
           </a>
         </li>
         <li>
@@ -84,6 +88,13 @@
             <div class="container">
 
               <div class="text" data-swiper-parallax="-100">
+                <div class="swiper-button-next" style="position:absolute;height:10%;width:70px;background-color:white;z-index:1;right:-1px;top:38%;display:flex;justify-content:center;align-items:center;">
+                  <a class="btn-floating btn-large waves-effect waves-light yellow darken-4 ">
+                    <i class="material-icons" style="color:white;">arrow_forward</i>
+                  </a>
+                </div>
+
+
                 <pre ><code class="z-depth-2" data-swiper-parallax="-200" class="js">
 // I'm a student of computer science.
 student.typeof('computer science')
@@ -237,9 +248,23 @@ let languages = '
         <div class="subtitle" data-swiper-parallax="-200">I choose to create work with a focus on simplicity</div>
 
 
-        <div id="art_scroll"class="card" data-swiper-parallax="-100" style="max-height:420px;overflow-y:scroll;">
+        <div id="art_scroll"class="card" data-swiper-parallax="-100" style="max-height:460px;overflow-y:scroll;">
           <div class="container">
             <div class="text" data-swiper-parallax="-100" style="display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex-wrap:wrap;">
+
+              <div  style="position:absolute;height:80px;width:80px;background-color:white;z-index:3;top:-1px;left:0px;display:flex;justify-content:center;align-items:center;">
+                <a id="scroll_down" class="btn-floating btn-large waves-effect waves-light yellow darken-4 " >
+                  <i class="material-icons" style="color:white;">arrow_drop_down</i>
+                </a>
+              </div>
+
+              <script type="text/javascript">
+              
+              document.getElementById('scroll_down').addEventListener("click", function() {
+                $("#art_scroll").animate({ scrollTop: 350 }, "slow");
+              })
+              </script>
+
               <div class="halfblox" style="width:100%;">
                 <img class="" style="max-width:100%;max-height:100%;"src="/clay03.jpg" alt="">
               </div>

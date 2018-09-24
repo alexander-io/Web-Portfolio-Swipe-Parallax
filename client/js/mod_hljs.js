@@ -192,18 +192,27 @@
 
     document.getElementById("style00").addEventListener('click', function() {
       set_style.dracula()
+      let toast = Materialize.toast('set code style dracula')
+      setTimeout(function() {
+        toast.remove()
+      }, 1500)
     })
 
     document.getElementById("style01").addEventListener('click', function() {
       set_style.purp()
+      let toast = Materialize.toast('set code style purple')
+      setTimeout(function() {
+        toast.remove()
+      }, 1500)
     })
 
-    document.getElementById("style02").addEventListener('click', function() {
-      set_style.lakeside_light()
-    })
 
     document.getElementById("style03").addEventListener('click', function() {
       set_style.atelier_sulphurpool_dark()
+      let toast = Materialize.toast('set code style sulphurpool')
+      setTimeout(function() {
+        toast.remove()
+      }, 1500)
     })
   })
 })()

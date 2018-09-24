@@ -23,6 +23,9 @@ app.get('/style.css', (req, res) => {
 app.get('/out_full.mp4', function(req, res) {
   res.sendFile(__dirname + '/media/output_full.mp4')
 })
+app.get('/small_output.mp4', function(req, res) {
+  res.sendFile(__dirname + '/media/small_output.mp4')
+})
 
 app.get('/materialize.js', function(req, res) {
   res.sendFile(__dirname + '/node_modules/materialize-css/dist/js/materialize.js')
@@ -90,6 +93,35 @@ app.get('/clay05.jpg', function(req, res) {
 
 app.get('/study_abroad00.jpg', function(req, res) {
   res.sendFile(__dirname + '/media/study_abroad00.jpg')
+})
+
+app.get('/programming.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming.png')
+})
+
+app.get('/programming.png_16x16', function(req, res) {
+  res.sendFile(__dirname + '/media/programming.png_16x16')
+})
+
+app.get('/programming_24x24.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming_24x24.png')
+})
+
+
+app.get('/programming_32x32.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming_32x32.png')
+})
+
+app.get('/programming_64x64.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming_64x64.png')
+})
+
+app.get('/programming_128x128.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming_128x128.png')
+})
+
+app.get('/programming_256x256.png', function(req, res) {
+  res.sendFile(__dirname + '/media/programming_256x256.png')
 })
 
 app.get('/resume.pdf', function(req, res) {
