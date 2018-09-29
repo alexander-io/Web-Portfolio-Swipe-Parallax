@@ -23,6 +23,12 @@ app.get('/style.css', (req, res) => {
 app.get('/out_full.mp4', function(req, res) {
   res.sendFile(__dirname + '/media/output_full.mp4')
 })
+
+app.get('/output_fast.mp4', function(req, res) {
+  res.sendFile(__dirname + '/media/output_fast.mp4')
+})
+
+
 app.get('/small_output.mp4', function(req, res) {
   res.sendFile(__dirname + '/media/small_output.mp4')
 })
