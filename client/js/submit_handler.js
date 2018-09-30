@@ -27,7 +27,7 @@
       let submit_message = document.getElementById('submit_message');
       let name_input = document.getElementById('name_field')
       let message_input = document.getElementById('message_field')
-
+      let toast = ''
       submit_message.addEventListener('click', function() {
         try { // try to submit the message to the server for twilio sms shipping
           // if the name  field is  empty
@@ -46,7 +46,7 @@
              'message' : message_input.value
           })
           // toast message sent
-          let toast = Materialize.toast('<span style="color:rgb(61, 143, 209);">message</span>.<span style="color:green;">submit()</span>')
+          toast = Materialize.toast('<span style="color:rgb(61, 143, 209);">message</span>.<span style="color:green;">submit()</span>')
           message_input.value = ''
           name_input.value = ''
 
