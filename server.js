@@ -28,6 +28,12 @@ app.get('/output_fast.mp4', function(req, res) {
   res.sendFile(__dirname + '/media/output_fast.mp4')
 })
 
+app.get('/output_fast.webm', function(req, res) {
+  res.sendFile(__dirname + '/media/output_fast.webm')
+})
+
+
+
 
 app.get('/small_output.mp4', function(req, res) {
   res.sendFile(__dirname + '/media/small_output.mp4')
