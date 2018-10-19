@@ -84,6 +84,10 @@ app.post('/message', function(req, res) {
   res.send({'status' : 'good'})
 })
 
+
+app.get('/profile.jpg', function(req, res) {
+  res.sendFile(__dirname + '/media/profile.jpg')
+})
 app.get('/clay00.jpg', function(req, res) {
   res.sendFile(__dirname + '/media/clay00.jpg')
 })
